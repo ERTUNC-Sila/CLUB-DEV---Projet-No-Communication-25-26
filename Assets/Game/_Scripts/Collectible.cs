@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public abstract class Collectible : MonoBehaviour
 {
     //[SerializeField] private ParticleSystem _collectedParticles;
-    public void Collect()
+    public void Collect(GameObject player)
     {
-        ExecuteEffect();
+        ExecuteEffect(player);
         Destroy(gameObject);
     }
 
-    private void ExecuteEffect()
-    {
-
-    }
+    public abstract void ExecuteEffect(GameObject player);
+   
 }

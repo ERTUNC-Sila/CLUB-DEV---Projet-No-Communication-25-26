@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4745448274548192941}
   - component: {fileID: 4391531825499462803}
   - component: {fileID: 1600025733380810904}
-  - component: {fileID: 8048274977756163410}
+  - component: {fileID: 7494561056829404406}
   m_Layer: 0
   m_Name: Collectible
   m_TagString: Untagged
@@ -109,7 +109,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8048274977756163410
+--- !u!114 &7494561056829404406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4791374323004582661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b011ada2ab00c47982a6209ef991f4, type: 3}
+  m_Script: {fileID: 11500000, guid: ed55fa8e8f515924681f5a24fc742bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fuelAmount: 1

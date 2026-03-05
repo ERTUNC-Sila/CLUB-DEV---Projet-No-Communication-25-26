@@ -7,17 +7,7 @@ public class PlayerCollect : MonoBehaviour
     {
         if (other.TryGetComponent<Collectible>(out Collectible collectible))
         {
-            collectible.Collect();
+            collectible.Collect(this.gameObject);
         }
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Collectible collectible = other.GetComponent<Collectible>();
-    //    if (collectible != null)
-    //    {
-    //        collectible.Collect(this.gameObject);
-    //        Destroy(collectible.gameObject);
-    //    }
-    //}
 }

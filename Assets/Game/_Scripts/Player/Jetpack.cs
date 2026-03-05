@@ -8,7 +8,7 @@ public class Jetpack : MonoBehaviour
     [SerializeField] private ParticleSystem _jetpackParticles;
     
     private Rigidbody _rbPlayer;
-    public float _currentFuel;
+    public float _currentFuel; //privee, public pr voir ds inspecteur
     private bool _isActive = false;
 
     private void Start()
@@ -19,10 +19,10 @@ public class Jetpack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_player.IsGrounded() && _currentFuel < _maxFuel)
-        {
-            _currentFuel += Time.deltaTime;
-        }
+        //if (_player.IsGrounded() && _currentFuel < _maxFuel)
+        //{
+        //    _currentFuel += Time.deltaTime;
+        //}
 
         if (_isActive == false)
         {
@@ -32,6 +32,17 @@ public class Jetpack : MonoBehaviour
 
         TryUseJetpack();
    
+    }
+
+    public void AddFuel(float amount)
+    {
+        if (_currentFuel + amount > _maxFuel)
+        {
+            _currentFuel = _maxFuel;
+            return;
+        }
+
+        _currentFuel += amount;
     }
 
     public void StartJetpack()
