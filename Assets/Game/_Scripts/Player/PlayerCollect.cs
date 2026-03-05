@@ -20,17 +20,4 @@ public class PlayerCollect : MonoBehaviour
     //        Destroy(collectible.gameObject);
     //    }
     //}
-
-    //public static Action OnPlayerCollectedObj;
-
-    //public void Start()
-    //{
-    //    OnPlayerCollectedObj += OnPlayerCollectedListenerMethod;
-
-    //}
-
-    //private void OnPlayerCollectedListenerMethod()
-    //{
-    //    Debug.Log(" collected " );
-    //}
 }

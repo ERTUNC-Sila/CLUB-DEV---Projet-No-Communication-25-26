@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    //[SerializeField] private ParticleSystem _collectedParticles;
     public void Collect()
     {
         ExecuteEffect();
