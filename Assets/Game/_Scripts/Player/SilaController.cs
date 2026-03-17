@@ -9,7 +9,7 @@ public class SilaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Je voulais utiliser l'input system mais mon PC à un bug qui fait que je peut pas le configurer dans l'éditeur :(
+        //Je voulais utiliser l'input system mais mon PC ï¿½ un bug qui fait que je peut pas le configurer dans l'ï¿½diteur :(
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * _sensitivity;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * _sensitivity;
         
@@ -17,6 +17,6 @@ public class SilaController : MonoBehaviour
         _xRotation = Mathf.Clamp(_xRotation, -90, 90);
         _yRotation += mouseX;
 
-        Camera.main.transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
+        GameManager.Instance.CurrentCam.transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
     }
 }

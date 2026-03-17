@@ -4,6 +4,6 @@ public class RotateWithCamera : MonoBehaviour
 {
     void Update()
     {
-        transform.rotation = Camera.main.transform.rotation;
+        transform.rotation = GameManager.Instance.CurrentCam.transform.rotation;
     }
 }

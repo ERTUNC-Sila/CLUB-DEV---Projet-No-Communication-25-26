@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8719678272557157403}
   - component: {fileID: 2486141542515022551}
   - component: {fileID: 7184689724273261445}
-  - component: {fileID: -8322246379484101977}
+  - component: {fileID: 379766194657340958}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 64815570e0f73d049a9e82d482390dc4, type: 2}
+  - {fileID: 2100000, guid: 18fbb0201235a0141af3ee28dfaeb8b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,7 +175,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-8322246379484101977
+--- !u!114 &379766194657340958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,6 +184,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6452408248672810453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ce38e9990f870a4d99500ac20977360, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b37551e5acc452da83caef154e7a018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

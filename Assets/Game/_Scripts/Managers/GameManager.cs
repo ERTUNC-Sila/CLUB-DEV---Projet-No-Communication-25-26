@@ -5,7 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public Camera CurrentCam;
+    [field: SerializeField] public Camera CurrentCam { get; private set; }
+    [field: SerializeField] public PlayerMovement Player { get; private set; }
 
     private void Awake()
     {
