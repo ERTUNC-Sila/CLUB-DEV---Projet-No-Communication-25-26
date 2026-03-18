@@ -3,6 +3,7 @@ using UnityEngine;
 public class Jetpack : MonoBehaviour
 {
     [SerializeField] private float _maxFuel = 10f;
+    [SerializeField] private bool _infiniteFuel;
     [SerializeField] private float _jetpackForce = 10f;
     [SerializeField] private PlayerMovement _player;
     [SerializeField] private ParticleSystem _jetpackParticles;
@@ -57,12 +58,12 @@ public class Jetpack : MonoBehaviour
         _jetpackParticles.Stop();
     }
 
-    public void TryUseJetpack()
+    private void TryUseJetpack()
     {
         if (_currentFuel > 0)
         {
-            _currentFuel -= Time.fixedDeltaTime;
-            _rbPlayer.AddForce(Vector3.up * _jetpackForce, ForceMode.Acceleration);
+            if (_infiniteFuel == false) _currentFuel -= Time.fixedDeltaTime;
+            _player.AddExternalForces(Vector3.up * _jetpackForce);//.(, ForceMode.Acceleration);
 
             _jetpackParticles.Play();
         }

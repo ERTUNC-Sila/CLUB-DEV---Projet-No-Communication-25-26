@@ -23,7 +23,7 @@ MonoBehaviour:
       type: {class: EffectFreezeFrame, ns: FeedbacksEditor, asm: Assembly-CSharp}
       data:
         Enabled: 1
-        Timer: 0.2
+        Timer: 0.05
     - rid: 1961922776526749760
       type: {class: EffectShakeCamera, ns: FeedbacksEditor, asm: Assembly-CSharp}
       data:

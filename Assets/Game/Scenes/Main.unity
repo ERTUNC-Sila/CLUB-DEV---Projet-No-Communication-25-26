@@ -35235,7 +35235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxFuel: 5
-  _jetpackForce: 20
+  _infiniteFuel: 1
+  _jetpackForce: 0.7
   _player: {fileID: 2141893015}
   _jetpackParticles: {fileID: 2093605130}
   _currentFuel: 0
@@ -62004,8 +62005,8 @@ RectTransform:
   m_GameObject: {fileID: 2060663986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.66666, y: 0.66666, z: 0.66666}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1687834052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62027,14 +62028,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.08627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7d3ac667fc8a5b41aee03c370f998fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5c9ed5cb17874f489246188bdaba65b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -69182,11 +69183,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &2141893012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69386,6 +69387,7 @@ MonoBehaviour:
   _addedSpeed: 5
   _turnSpeed: 10
   _playerGroundTransform: {fileID: 314387722}
+  _gravity: 150
 --- !u!114 &2141893016
 MonoBehaviour:
   m_ObjectHideFlags: 0

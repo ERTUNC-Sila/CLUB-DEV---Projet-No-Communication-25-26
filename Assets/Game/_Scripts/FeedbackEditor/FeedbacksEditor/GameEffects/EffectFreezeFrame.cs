@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Common.TimeScale;
 using UnityEngine;
 
 namespace FeedbacksEditor

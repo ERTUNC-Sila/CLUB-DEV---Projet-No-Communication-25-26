@@ -4,15 +4,20 @@ public class PlayerMovement : MonoBehaviour
 {
     public Vector3 _moveDir { get; set; }
 
-    [Header("Movement Parameters")]
-    [SerializeField] private float _speed = 6f;
+    [Header("Movement Parameters")] [SerializeField]
+    private float _speed = 6f;
+
     [SerializeField] private float _addedSpeed = 5f;
     [SerializeField] private float _turnSpeed = 10f;
-    [SerializeField] private Transform _playerGroundTransform;
+
+    [Header("Gravity Parameters")] [SerializeField]
+    private Transform _playerGroundTransform;
+
+    [SerializeField] private float _gravity;
 
     private Vector2 _moveInput;
     private Rigidbody _rb;
-    
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -22,10 +27,12 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveInput = moveInput;
     }
+
     private void FixedUpdate()
     {
         HandleMovement();
         HandleRotation();
+        HandlesGravity();
     }
 
     private void HandleMovement()
@@ -46,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
         _rb.linearVelocity = targetV;
         //_rb.linearVelocity = _moveDir * _speed;
         //_rb.AddForce(_moveDir * _speed, ForceMode.Force);
-
     }
 
     public void AddExternalForces(Vector3 force)
@@ -54,20 +60,29 @@ public class PlayerMovement : MonoBehaviour
         _rb.AddForce(force, ForceMode.VelocityChange);
     }
 
-    void HandleRotation()
+    private void HandleRotation()
     {
         if (_moveInput.sqrMagnitude < 0.1f || _moveDir.sqrMagnitude < 0.1f)
             return;
 
         Quaternion targetRotation = Quaternion.LookRotation(_moveDir, Vector3.up);
-        Quaternion newRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_moveDir), _turnSpeed * Time.fixedDeltaTime);
+        Quaternion newRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_moveDir),
+            _turnSpeed * Time.fixedDeltaTime);
         transform.rotation = newRotation;
+    }
+
+    private void HandlesGravity()
+    {
+        if (IsGrounded()) return;
+
+        _rb.AddForce(Vector3.down * _gravity, ForceMode.Force);
     }
 
     public void AddSpeed()
     {
         _speed += _addedSpeed;
     }
+
     public void RemoveSpeed()
     {
         _speed -= _addedSpeed;
@@ -82,5 +97,4 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
-
 }
