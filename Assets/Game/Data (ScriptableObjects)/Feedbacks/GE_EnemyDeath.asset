@@ -10,23 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d94c7b0b9b104aa382d2be7cbe15745c, type: 3}
-  m_Name: GE_Test
+  m_Name: GE_EnemyDeath
   m_EditorClassIdentifier: 
   Effects:
+  - rid: 1961922776526749762
   - rid: 1961922764073861319
-  - rid: 1961922764073861317
-  - rid: 1961922764073861320
-  - rid: 1961922764073861318
+  - rid: 1961922776526749760
   references:
     version: 2
     RefIds:
-    - rid: 1961922764073861317
+    - rid: 1961922764073861319
+      type: {class: EffectFreezeFrame, ns: FeedbacksEditor, asm: Assembly-CSharp}
+      data:
+        Enabled: 1
+        Timer: 0.2
+    - rid: 1961922776526749760
       type: {class: EffectShakeCamera, ns: FeedbacksEditor, asm: Assembly-CSharp}
       data:
         Enabled: 1
         ScreenShakeParams:
-          Strength: 0.2
-          Duration: 0.1
+          Strength: 0.8
+          Duration: 0.16
           Curve:
             serializedVersion: 2
             m_Curve:
@@ -51,22 +55,8 @@ MonoBehaviour:
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 4
-    - rid: 1961922764073861318
-      type: {class: EffectSound, ns: FeedbacksEditor, asm: Assembly-CSharp}
+    - rid: 1961922776526749762
+      type: {class: EffectWait, ns: FeedbacksEditor, asm: Assembly-CSharp}
       data:
         Enabled: 1
-        Clips:
-        - {fileID: 6418180475301049370, guid: e5165cd33090a8f469bb55299b0e807f, type: 2}
-    - rid: 1961922764073861319
-      type: {class: EffectFreezeFrame, ns: FeedbacksEditor, asm: Assembly-CSharp}
-      data:
-        Enabled: 1
-        Timer: 0.02
-    - rid: 1961922764073861320
-      type: {class: EffectHaptic, ns: FeedbacksEditor, asm: Assembly-CSharp}
-      data:
-        Enabled: 1
-        HapticParams:
-          LowFrequency: 0.1
-          HighFrequency: 0.1
-          Time: 0.2
+        Timer: 0.04

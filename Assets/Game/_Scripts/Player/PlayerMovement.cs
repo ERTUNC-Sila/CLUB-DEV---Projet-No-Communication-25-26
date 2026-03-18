@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 _moveInput;
     private Rigidbody _rb;
-
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -27,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
-
     }
 
     private void HandleMovement()
@@ -49,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
         //_rb.linearVelocity = _moveDir * _speed;
         //_rb.AddForce(_moveDir * _speed, ForceMode.Force);
 
+    }
+
+    public void AddExternalForces(Vector3 force)
+    {
+        _rb.AddForce(force, ForceMode.VelocityChange);
     }
 
     void HandleRotation()

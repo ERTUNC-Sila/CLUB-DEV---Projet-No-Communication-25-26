@@ -12,7 +12,7 @@ public class CentipedeEditor : Editor
         
         EditorGUILayout.Space();
 
-        if (GUILayout.Button("Create Centipede"))
+        if (GUILayout.Button("Create/Update Centipede"))
         {
             centipede.CreateCentipede();
         }

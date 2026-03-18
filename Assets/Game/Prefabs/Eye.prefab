@@ -763,7 +763,9 @@ GameObject:
   - component: {fileID: 2486141542515022551}
   - component: {fileID: 7184689724273261445}
   - component: {fileID: 379766194657340958}
-  m_Layer: 0
+  - component: {fileID: 1468317422522889378}
+  - component: {fileID: 426813111412356175}
+  m_Layer: 7
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,6 +856,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b37551e5acc452da83caef154e7a018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1468317422522889378
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452408248672810453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &426813111412356175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452408248672810453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd4a589b5424645976779345dad6f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthPoints: 3
+  _damagedFeedback: {fileID: 11400000, guid: ae9f38930b0c8744b915ce3677454d92, type: 2}
+  _deathFeedback: {fileID: 11400000, guid: 21f66587ce9b89f46badb5a044e1d0a7, type: 2}
 --- !u!1 &6560084731725393749
 GameObject:
   m_ObjectHideFlags: 0

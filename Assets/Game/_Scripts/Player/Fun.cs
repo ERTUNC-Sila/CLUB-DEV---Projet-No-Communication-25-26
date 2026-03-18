@@ -6,7 +6,11 @@ using UnityEngine;
 /// </summary>
 public class Fun : MonoBehaviour
 {
+    [SerializeField] private PlayerMovement _player;
+    [SerializeField] private LayerMask _shootLayerMask;
     [SerializeField] private GameEvent _shootFeedback;
+    [SerializeField] private int _damageByShot;
+    [SerializeField] private Vector3 _recoilForce;
     
     private void Start()
     {
@@ -18,8 +22,18 @@ public class Fun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("BOOM");
+            // Shoot
             GameEventsManager.PlayEvent(_shootFeedback, gameObject);
+            if (Physics.Raycast(GameManager.Instance.CurrentCam.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, _shootLayerMask))
+            {
+                if (hit.collider.TryGetComponent(out EnemyHealth enemyHealth))
+                {
+                    enemyHealth.TakeDamage(_damageByShot);
+                }
+            }
+            
+            // Recoil
+            _player.AddExternalForces(Vector3.Scale(-GameManager.Instance.CurrentCam.transform.forward, _recoilForce));
         }
     }
 }
